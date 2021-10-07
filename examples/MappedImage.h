@@ -13,8 +13,6 @@ public:
     const std::string& GetTextureName() { return m_texture; }
 //        inline GFrost::Vector4 GetTextureSize() { return glm::ivec2(m_texWidth, m_texHeight); }
     inline GFrost::Rect GetCoords() { return m_coords; }
-
-    inline GFrost::Vector2 GetPos() { return pos_; }
     inline int GetTextureWidth() { return m_texWidth; }
     inline int GetTextureHeight() { return m_texHeight; }
 
@@ -28,8 +26,7 @@ public:
             && m_status == rvl.m_status
             && m_texHeight == rvl.m_texHeight
             && m_texWidth == m_texWidth
-            && m_texture == rvl.m_texture
-            && pos_ == rvl.pos_;
+            && m_texture == rvl.m_texture;
     }
 
     static MappedImage DEFAULT;
@@ -39,21 +36,19 @@ private:
     int m_texHeight{};
     GFrost::Rect m_coords;
     std::string m_status;
-
-    GFrost::Vector2 pos_;
 };
 
 template<>
-inline std::shared_ptr<MappedImage> INIFile::GetBlock(std::string_view name)
+inline std::shared_ptr<MappedImage> INIFile::GetBlock(const std::string& name)
 {
     auto blocks = blocks_["MappedImage"];
 
-    auto it = blocks.find(std::string(name));
+    auto it = blocks.find(name);
 
     if (it != blocks.end())
         return std::dynamic_pointer_cast<MappedImage>(it->second);
 
-    printf("WARNING: Can't find object MappedImage: %s", name);
+    printf("WARNING: Can't find object MappedImage: %s", name.c_str());
     return std::make_shared<MappedImage>(MappedImage::DEFAULT);
 }
 

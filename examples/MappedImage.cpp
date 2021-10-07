@@ -20,8 +20,6 @@ void MappedImage::SetProperty(const std::string& name, const Ini::Property& valu
         m_coords = value.Get<GFrost::Rect>();
     else if (name == "Status")
         m_status = value.GetString();
-    else if (name == "Test")
-        pos_ = value.Get<GFrost::Vector2>();
     else if (name == "TextureHeight")
         m_texHeight = value.GetInteger();
     else if (name == "TextureWidth")
