@@ -34,7 +34,7 @@ public:
     }
 
     template<class T = Ini::Block>
-    std::shared_ptr<T> GetBlock(std::string_view name = "");
+    std::shared_ptr<T> GetBlock(const std::string& name = "");
 //    {
 //
 //        auto block = blocks_[T::GetBlockName()];
@@ -93,7 +93,6 @@ private:
     std::map<std::string, std::map<std::string, std::shared_ptr<Ini::Block>>> blocks_;
 
     Ini::Parser* parser_;
-    Ini::Lexer* lexer_;
     std::string work_dir_ = "./";
 };
 
