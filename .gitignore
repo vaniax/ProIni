@@ -1,7 +1,11 @@
+# Project
 /bin/*
 !/bin/*/
 /cmake-*/
 /lib
+
+# Clion
+/.idea
 
 
 # Prerequisites
