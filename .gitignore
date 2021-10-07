@@ -1,3 +1,9 @@
+/bin/*
+!/bin/*/
+/cmake-*/
+/lib
+
+
 # Prerequisites
 *.d
 
