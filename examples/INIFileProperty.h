@@ -11,22 +11,22 @@ namespace GFrost {
     class Color;
 }
 
-template<>
-PROINI_API GFrost::Vector2 Ini::Property::Get() const;
+template<> [[nodiscard]]
+GFrost::Vector2 Ini::Property::Get() const;
 
-template<>
-PROINI_API GFrost::Vector3 Ini::Property::Get() const;
+template<> [[nodiscard]]
+GFrost::Vector3 Ini::Property::Get() const;
 
-template<>
-PROINI_API GFrost::Vector4 Ini::Property::Get() const;
+template<> [[nodiscard]]
+GFrost::Vector4 Ini::Property::Get() const;
 
-template<>
-PROINI_API GFrost::Rect Ini::Property::Get() const;
+template<> [[nodiscard]]
+GFrost::Rect Ini::Property::Get() const;
 
-template<>
-PROINI_API GFrost::Quaternion Ini::Property::Get() const;
+template<> [[nodiscard]]
+GFrost::Quaternion Ini::Property::Get() const;
 
-template<>
-PROINI_API GFrost::Color Ini::Property::Get() const;
+template<> [[nodiscard]]
+GFrost::Color Ini::Property::Get() const;
 
 

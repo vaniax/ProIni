@@ -4,8 +4,8 @@ include_directories(
         ../src
 )
 
+
 set(SOURCE_FILES
-        main.cpp
         MappedImage.h
         MappedImage.cpp
         INIFileProperty.h
@@ -20,9 +20,13 @@ endif(UNIX)
 
 set(LINK_LIBS
         ProIni
+        IniProperties
         )
 
-add_executable (${TARGET_NAME} ${TARGET_TYPE} ${SOURCE_FILES})
+add_library(IniProperties SHARED ${SOURCE_FILES})
+target_link_libraries(IniProperties PRIVATE ProIni)
+
+add_executable (${TARGET_NAME} ${TARGET_TYPE} main.cpp)
 target_link_libraries(${TARGET_NAME} PRIVATE ${LINK_LIBS})
 target_include_directories(${TARGET_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 

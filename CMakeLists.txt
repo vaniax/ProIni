@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(ProIni)
 
-if (UNIX)
+if (UNIX AND (NOT WIN32))
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib) # *.so
     set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib/unix) # *.a
 else()

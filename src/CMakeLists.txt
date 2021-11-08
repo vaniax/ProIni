@@ -31,6 +31,10 @@ target_compile_definitions(ProIni PRIVATE
         -DPROINI_EXPORTS
         )
 
+add_definitions(
+        -DPROINI_EXPORTS
+)
+
 #target_link_libraries(ProIni PRIVATE
 #        GFrost
 #        )
